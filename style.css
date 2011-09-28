@@ -1,0 +1,109 @@
+* {
+  margin: 0;
+  padding: 0;
+
+  font-family: Georgia, Palatino, Times, 'Times New Roman', sans-serif;
+}
+
+body {
+  background: #F8F8F8;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:link,
+a:visited {
+  color: #777;
+}
+
+a:hover {
+  color: #CF6A6F;
+}
+
+#main {
+  position: absolute;
+  top: 40px;
+  left: 300px;
+  width: 500px;
+}
+
+#main h1 {
+  font-size: 40px;
+  font-weight: normal;
+  line-height: 40px;
+  letter-spacing: -1px;
+}
+
+#main p {
+  margin: 20px 0;
+  font-size: 15px;
+  line-height: 20px;
+}
+
+#main ul, #main ol {
+  margin: 20px;
+}
+
+#main li {
+  font-size: 15px;
+  line-height: 20px;
+}
+
+#main ul li {
+  list-style-type: square;
+}
+
+#sidebar {
+  position: fixed;
+
+  top: 40px;
+  left: 60px;
+  width: 200px;
+  height: 35em;
+
+  border-right: 1px solid #ccc;
+}
+
+#sidebar h2 a{
+  color: #333;
+  letter-spacing: 1px;
+  line-height: 20px;
+  font-family: 'Damion';
+  text-transform: none;
+  font-weight:normal;
+}
+
+#sidebar ul {
+  list-style-type: none;
+
+  margin: 20px 0px;
+}
+
+#sidebar li {
+  font-size: 14px;
+  line-height: 40px;
+}
+
+#sidebar a{
+  text-transform: uppercase;
+  color:#333;
+}
+
+#sidebar a:hover{
+  color: #CF6A6F;
+}
+
+#profile_pic{
+  top:20px;
+  left:550px;
+  position:absolute;
+}
+
+.framed_pic{
+  border: 1px solid #ccc;
+  padding:4px;
+  background: white;
+  margin: 10px 10px 10px 0px;
+}
