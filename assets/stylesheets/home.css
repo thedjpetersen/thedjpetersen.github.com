@@ -1,0 +1,44 @@
+.section:first-child{
+  min-height: 200px;
+}
+
+.section:last-child{
+  border-bottom: none;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+}
+
+.blogpost{
+  margin: 0px 0px 20px 0px;
+}
+
+.blogpost .blogdate{
+  width: 75px;
+}
+
+.blogdate,.blogtitle{
+  display: inline-block;
+}
+
+.blogpost .blogtitle a{
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  color: black;
+  font-weight: bold;
+}
+
+.blogpost .blogtitle a:hover{
+  color: #CF6A6F;
+}
+
+.blogpost:hover .blogdate span{
+  background: red;
+}
+
+.blogpost .blogdate span{
+  color: white;
+  background: black;
+  padding: 5px;
+  border-radius: 5px;
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+}
+
