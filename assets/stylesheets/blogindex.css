@@ -1,0 +1,19 @@
+.blogpost .blogheader h3{
+  display: inline-block;
+}
+
+.blogpost .blogheader h3 a, .blogpost .blogheader span{
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+}
+
+.blogpost .blogheader h3 a{
+  color: black;
+}
+
+.blogpost .blogheader h3 a:hover{
+  color: #CF6A6F;
+}
+
+.blogpost .blogheader span{
+  float: right;
+}
