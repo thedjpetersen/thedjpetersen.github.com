@@ -1,5 +1,6 @@
 .blogpost .blogheader h3{
   display: inline-block;
+  max-width: 500px;
 }
 
 .blogpost .blogheader h3 a, .blogpost .blogheader span{

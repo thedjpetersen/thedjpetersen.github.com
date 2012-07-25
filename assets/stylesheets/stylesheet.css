@@ -16,6 +16,7 @@ h1, h2, h3, h4, h5, h6 {
 p {
   margin: 20px 0;
   line-height: 1.6em;
+  color: #333333;
 }
 
 a {
@@ -76,15 +77,6 @@ ul li {
   height: 100%;
   border-right: 1px solid #ccc;
   background: #F8F8F8;
-}
-
-#sidebar #logo a{
-  color: #333;
-  letter-spacing: 1px;
-  line-height: 20px;
-  font-family: 'Damion';
-  text-transform: none;
-  font-weight:normal;
 }
 
 #sidebar ul {
@@ -197,3 +189,13 @@ ul li {
   margin-bottom: 20px;
 }
 
+.bloginfo{
+  padding: 10px;
+  border-top: 1px solid #CCC;
+  width: 300px;
+}
+
+.infolabel{
+  display: inline-block;
+  width: 100px;
+}
