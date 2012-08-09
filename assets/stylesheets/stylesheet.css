@@ -58,11 +58,11 @@ ul li {
    * top: 40px;
    * left: 300px;
   */
-  position:relative;
-  margin-top:40px;
-  margin-left:325px;
-  margin-right:auto;
-  width: 700px;
+  position: relative;
+  margin-top: 40px;
+  margin-right: auto;
+  margin-left: 325px;
+  width: 750px;
 }
 
 
@@ -172,6 +172,7 @@ ul li {
   border: 1px solid #ccc;
   padding:4px;
   background: white;
+  margin: 10px 10px 10px 0px;
 }
 
 .half_page{
