@@ -4,7 +4,8 @@
     <meta charset="utf-8">
     <title>David Petersen - Google Image Language Game</title>
     <link rel="stylesheet" type="text/css" href="/assets/stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="/assets/stylesheets/coderay.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="/assets/stylesheets/prettify.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="/assets/stylesheets/sunburst.css" media="screen">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <link href="http://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet" type="text/css">
     
@@ -18,17 +19,13 @@
       
       <div id="score" style="text-align: right; font-size:24px;">0 points</div>
 <div id="content" style="min-height:200px">Loading...</div>
-<div id="branding" ></div><br />
-<div id="paging"></div>
+<div id="branding"></div><br><div id="paging"></div>
 <div style="margin-top:15px;">
-  <input id="game_input" onkeyup="checkInput(this, event)" />
-  <a href="javascript:void(0)" onclick="hint()">Hint</a>
+  <input id="game_input" onkeyup="checkInput(this, event)"><a href="javascript:void(0)" onclick="hint()">Hint</a>
 </div>
 <div>
   <p>Instructions: To play the language game just start typing in what you see from the pictures(In French).</p>
 </div>
-
-
       
     </div>
     <div id="sidebar">
@@ -70,6 +67,7 @@
     })();
 
   </script>
+  <script type="text/javascript" src="/assets/javascripts/prettify.js"></script>
   
 <script>
   var points = 0;

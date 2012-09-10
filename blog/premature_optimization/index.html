@@ -4,7 +4,8 @@
     <meta charset="utf-8">
     <title>David Petersen - Being performance minded while avoiding premature optimization</title>
     <link rel="stylesheet" type="text/css" href="/assets/stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="/assets/stylesheets/coderay.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="/assets/stylesheets/prettify.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="/assets/stylesheets/sunburst.css" media="screen">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <link href="http://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet" type="text/css">
     
@@ -16,14 +17,10 @@
         <h1>Being performance minded while avoiding premature optimization</h1>
 
       
-      <p><img
-src="/assets/images/mousetrap.jpg"/ style="padding: 5px; border: 1px solid #CCC;"></p>
-
-<blockquote>
+      <p><img src="/assets/images/mousetrap.jpg" style="padding: 5px; border: 1px solid #CCC;"><blockquote>
   Premature optimization is the root of all evil.
-  <br/><br/><span style="margin-left: 20px;">- Donald Knuth</span>
-</blockquote>
-
+  <br><br><span style="margin-left: 20px;">- Donald Knuth</span>
+</blockquote></p>
 
 <p>For those working on large projects it becomes evident why Dr. Knuth
 considered premature optimization the root of all evil. What usually
@@ -34,8 +31,7 @@ problem you spend all your time re-implementing libraries.</p>
 <p>It is only human nature to want to do things better. This is where it
 takes the most discreation. Whenever you come to the crossroads and you
 are trying to decide whether or not to re-implement a library or
-refactor an application entirely you must outline the <a
-href="http://en.wikipedia.org/wiki/Opportunity_cost">Opportunity Cost</a>.
+refactor an application entirely you must outline the <a href="http://en.wikipedia.org/wiki/Opportunity_cost">Opportunity Cost</a>.
 Making a pros/cons list helps, but even more setting a time limit on an
 improvement helps even more. If after a certain amount of time the
 improvement is not implemented I believe it should be abandoned.</p>
@@ -98,6 +94,7 @@ works and optimizing later.</p>
     })();
 
   </script>
+  <script type="text/javascript" src="/assets/javascripts/prettify.js"></script>
   
   </body>
 </html>

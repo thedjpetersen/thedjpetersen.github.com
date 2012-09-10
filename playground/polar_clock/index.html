@@ -1,0 +1,143 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>David Petersen - Polar Clock</title>
+    <link rel="stylesheet" type="text/css" href="/assets/stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="/assets/stylesheets/prettify.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="/assets/stylesheets/sunburst.css" media="screen">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href="http://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet" type="text/css">
+    
+    <meta name="generator" content="nanoc 3.2.2">
+  </head>
+  <body>
+    <div id="main">
+      
+        <h2>Polar Clock</h2>
+
+      
+      <canvas id="canvas1" width="400" height="400"></canvas><p>I have been playing around with making a simple polar clock lately and this is the result.
+I really enjoy the visual representation of time.</p>
+<pre class="prettyprint">
+  var can = document.getElementById('canvas1');
+  var ctx = can.getContext('2d');
+
+  function leadingZero(number) {
+      return number&lt;10 ? '0' + number : number;
+  }
+
+  function drawArc(pos, offset) {
+      ctx.beginPath()
+      ctx.arc(200,200,pos,Math.PI*1.5,(1.5+offset)*Math.PI, false);
+      ctx.lineWidth = 20;
+      ctx.strokeStyle = "hsl(" + (110-offset*55) + ", 100%, 50%)";
+      ctx.stroke();
+  }
+
+  function drawTimer() {
+      var curr = new Date()
+      var hours = curr.getHours(),
+      seconds = curr.getSeconds(),
+      minutes = curr.getMinutes(),
+      hours = curr.getHours();
+
+      ctx.clearRect(0,0,500,500);
+      drawArc(100, (seconds+(curr.getMilliseconds()/1000))/30);
+      drawArc(125, (minutes/30));
+      drawArc(150, (hours/12));
+      
+      ctx.fillStyle = 'black';
+      ctx.font = 'bold 30px sans-serif';
+      ctx.textBaseline = 'bottom';
+      ctx.fillText(hours + ':' + leadingZero(minutes) + ':' + leadingZero(seconds), 140, 210);
+  }
+
+  setInterval(function(){drawTimer()},150);
+</pre>
+
+<script type="text/javascript">
+  window.onload = function() {
+    prettyPrint();
+  };
+</script><script>
+  var can = document.getElementById('canvas1');
+  var ctx = can.getContext('2d');
+
+  function leadingZero(number) {
+      return number<10 ? '0' + number : number;
+  }
+
+  function drawArc(pos, offset) {
+      ctx.beginPath()
+      ctx.arc(200,200,pos,Math.PI*1.5,(1.5+offset)*Math.PI, false);
+      ctx.lineWidth = 20;
+      ctx.strokeStyle = "hsl(" + (110-offset*55) + ", 100%, 50%)";
+      ctx.stroke();
+  }
+
+  function drawTimer() {
+      var curr = new Date()
+      var hours = curr.getHours(),
+      seconds = curr.getSeconds(),
+      minutes = curr.getMinutes(),
+      hours = curr.getHours();
+
+      ctx.clearRect(0,0,500,500);
+      drawArc(100, (seconds+(curr.getMilliseconds()/1000))/30);
+      drawArc(125, (minutes/30));
+      drawArc(150, (hours/12));
+      
+      ctx.fillStyle = 'black';
+      ctx.font = 'bold 30px sans-serif';
+      ctx.textBaseline = 'bottom';
+      ctx.fillText(hours + ':' + leadingZero(minutes) + ':' + leadingZero(seconds), 140, 210);
+  }
+
+  setInterval(function(){drawTimer()},150);
+</script>
+      
+    </div>
+    <div id="sidebar">
+      <h2 id="logo">
+        <a href="/">
+          <img src="/assets/images/logo.png">
+        </a>
+      </h2>
+      <ul>
+        <li><h3>&Agrave; la carte</h3></li>
+        <li id="blog"><a href="/blog/">Blog</a></li>
+        <li id="about"><a href="/about/">About</a></li>
+        <li id="projects"><a href="/projects/">Projects</a></li>
+        <li id="playground"><a href="/playground/">Playground</a></li>
+        <li id="presentations"><a href="/presentations/">Presentations</a></li>
+        <li id="contact"><a href="/contact/">Contact</a></li>
+      </ul>
+      <div id="social">
+        <a href="http://www.github.com/thedjpetersen">
+          <img src="/assets/images/github.png"></img>
+        </a>
+        <a href="http://www.twitter.com/thedjpetersen">
+          <img src="/assets/images/twitter.png"></img>
+        </a>
+      </div>
+
+      <div id="edge"></div>
+    </div>
+  <script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-26290380-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+  </script>
+  <script type="text/javascript" src="/assets/javascripts/prettify.js"></script>
+  
+  </body>
+</html>

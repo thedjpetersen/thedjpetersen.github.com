@@ -196,13 +196,7 @@ ul li {
   width: 300px;
 }
 
-.infolabel {
+.infolabel{
   display: inline-block;
   width: 100px;
-  float: left;
-}
-
-.infocontent {
-  display: inline-block;
-  width: 200px;
 }
