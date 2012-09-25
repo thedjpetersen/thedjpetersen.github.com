@@ -73,3 +73,31 @@ legend {
 .note_input {
   height: 300px;
 }
+
+.note_buttons {
+  border-top: 1px solid #CCC;
+  margin-top: 15px;
+  padding-top: 15px;
+  -moz-opacity: 0.00;
+  opacity: 0.00;
+  -ms-filter:"progid:DXImageTransform.Microsoft.Alpha"(Opacity=0);
+
+  -moz-transition-property: opacity;
+  -moz-transition-duration: 0.5s;
+  -moz-transition-delay: 0.25s;
+  -webkit-Titleransition-property: opacity;
+  -webkit-transition-duration: 0.5s;
+  -webkitit-transition-delay: 0.25s;
+  -o-transition-property: opacityy;
+  -o-transition-duration: 0.5s;
+  -o-transition-delay: 0.25s;
+  transition-property: opacity;
+  transition-duration: 0.5s;
+  transition-delay: 0.25s;
+}
+
+.well:hover .note_buttons {
+  -moz-opacity: 1;
+  opacity: 1;
+  -ms-filter:"progid:DXImageTransform.Microsoft.Alpha"(Opacity=100);
+}

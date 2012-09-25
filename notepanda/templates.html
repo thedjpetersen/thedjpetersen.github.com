@@ -71,14 +71,16 @@
     </ul>
   </div>
 
-  <div class="well span12">
-    <legend>{{model.name}}</legend>
-    {{{model.content}}}
-  </div>
   <div class="span12">
-    <a href="#!/notes/{{model.id}}/edit" class="btn">Edit Note</a>
-    <a href="#!/new_note/{{model.id}}" class="btn btn-primary">Add Child</a>
-    <a href="#!/" class="btn btn-danger delete">Delete Note</a>
+    <div class="well">
+      <legend>{{model.name}}</legend>
+      {{{model.content}}}
+      <div class="note_buttons">
+        <a href="#!/notes/{{model.id}}/edit" class="btn">Edit Note</a>
+        <a href="#!/new_note/{{model.id}}" class="btn btn-primary">Add Child</a>
+        <a href="#!/" class="btn btn-danger delete">Delete Note</a>
+      </div>
+    </div>
   </div>
   {{#if children.length}}
     <div class="span12">

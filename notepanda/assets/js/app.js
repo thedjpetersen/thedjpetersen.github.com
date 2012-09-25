@@ -7,7 +7,6 @@ $(document).ready(function(){
     }),
     
     login: function(callback){
-      this.client.authDriver(new Dropbox.Drivers.Redirect());
       this.client.authenticate(function(error, client) {
         if (error) {return showError(error);}
         setup_notes(function(){
@@ -81,6 +80,7 @@ $(document).ready(function(){
   });
 
   fetch_templates('./templates.html', function(){
+    panda.client.authDriver(new Dropbox.Drivers.Redirect({rememberUser: true}));
     panda.router = new appRouter();
     Backbone.history.start({
       root: window.location.pathname
