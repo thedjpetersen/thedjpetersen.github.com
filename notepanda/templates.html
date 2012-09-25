@@ -49,8 +49,8 @@
   {{/each}}
   <div class="span12">
     {{#if parents.length}}
-      <a href="/#!/notes/{{model.id}}/edit" class="btn">Edit Category</a>
-      <a href="/#!/" class="btn btn-danger delete">Delete Category</a>
+      <a href="#!/notes/{{model.id}}/edit" class="btn">Edit Category</a>
+      <a href="#!/" class="btn btn-danger delete">Delete Category</a>
     {{/if}}
   </div>
 </script>
@@ -76,9 +76,9 @@
     {{{model.content}}}
   </div>
   <div class="span12">
-    <a href="/#!/notes/{{model.id}}/edit" class="btn">Edit Note</a>
-    <a href="/#!/new_note/{{model.id}}" class="btn btn-primary">Add Child</a>
-    <a href="/#!/" class="btn btn-danger delete">Delete Note</a>
+    <a href="#!/notes/{{model.id}}/edit" class="btn">Edit Note</a>
+    <a href="#!/new_note/{{model.id}}" class="btn btn-primary">Add Child</a>
+    <a href="#!/" class="btn btn-danger delete">Delete Note</a>
   </div>
   {{#if children.length}}
     <div class="span12">

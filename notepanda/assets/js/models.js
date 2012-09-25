@@ -30,14 +30,14 @@ var Notes = Backbone.Collection.extend({
       if(parent_id === "root"){
         parents.unshift({
           name: 'Home',
-          url: '/#!/'
+          url: '#!/'
         });
       }
       if(parent) {
         parent_id = parent.get('parent_id');
         parents.unshift({
           name: parent.get('name'),
-          url: '/#!/notes/' + parent.get('id')
+          url: '#!/notes/' + parent.get('id')
         });
       } else {
         parent_id = parent;
