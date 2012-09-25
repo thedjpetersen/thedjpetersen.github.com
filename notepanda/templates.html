@@ -1,0 +1,110 @@
+<script id="loggedin" type="text/x-handlebars-template">
+  <li><a>{{name}}</a></li>
+  <li><a href="#!/logout/">Logout</a></li>
+</script>
+
+<script id="loggedout" type="text/x-handlebars-template">
+  <li><a href="#!/login/">Login</a></li>
+</script>
+
+<script id="loggedout_splash" type="text/x-handlebars-template">
+  <h3>Welcome! Please login to continue.</h3>
+</script>
+
+<script id="category" type="text/x-handlebars-template">
+  <div class="span12">
+    <ul class="breadcrumb">
+      {{#if parents.length}}
+        {{#each parents}}
+        <li>
+          <span class="divider">/</span>
+          <a href="{{this.url}}">{{this.name}}</a>
+        </li>
+        {{/each}}
+        <li class="active">
+          <span class="divider">/</span>
+          {{model.name}}
+        </li>
+      {{else}}
+        <li class="active">
+          <span class="divider">/</span>
+          Home
+        </li>
+      {{/if}}
+    </ul>
+  </div>
+
+  <div class="span12">
+    <h3 class="category_title">{{model.name}}</h3>
+  </div>
+
+  <div class="span3 well new_note">
+    <h4>New note</h4>
+    <p>Click here to add a new note or category.</p>
+  </div>
+  {{#each children}}
+  <div class="span3 well {{this.attributes.type}}" data-href="#!/notes/{{this.attributes.id}}">
+    <h4>{{this.attributes.name}}</h4>
+  </div>
+  {{/each}}
+  <div class="span12">
+    {{#if parents.length}}
+      <a href="/#!/notes/{{model.id}}/edit" class="btn">Edit Category</a>
+      <a href="/#!/" class="btn btn-danger delete">Delete Category</a>
+    {{/if}}
+  </div>
+</script>
+
+<script id="note" type="text/x-handlebars-template">
+  <div class="span12">
+    <ul class="breadcrumb">
+      {{#each parents}}
+      <li>
+        <span class="divider">/</span>
+        <a href="{{this.url}}">{{this.name}}</a>
+      </li>
+      {{/each}}
+      <li class="active">
+        <span class="divider">/</span>
+        {{model.name}}
+      </li>
+    </ul>
+  </div>
+
+  <div class="well span12">
+    <legend>{{model.name}}</legend>
+    {{{model.content}}}
+  </div>
+  <div class="span12">
+    <a href="/#!/notes/{{model.id}}/edit" class="btn">Edit Note</a>
+    <a href="/#!/new_note/{{model.id}}" class="btn btn-primary">Add Child</a>
+    <a href="/#!/" class="btn btn-danger delete">Delete Note</a>
+  </div>
+  {{#if children.length}}
+    <div class="span12">
+      <h3>Children</h3>
+    </div>
+    {{#each children}}
+    <div class="span3 well {{this.attributes.type}}" data-href="#!/notes/{{this.attributes.id}}">
+      <h4>{{this.attributes.name}}</h4>
+    </div>
+    {{/each}}
+  {{/if}}
+</script>
+
+<script id="edit_note" type="text/x-handlebars-template">
+  <form>
+    {{#if name}}
+    <legend>Edit Note</legend>
+    {{else}}
+    <legend>New Note</legend>
+    {{/if}}
+    <div>
+      <input type="text" name="title" placeholder="Title" class="span8" value="{{name}}">
+    </div>
+    <div>
+      <textarea class="span11 note_input"">{{content}}</textarea>
+    </div>
+    <a href="#" class="save btn">Save</a>
+  </form>
+</script>
