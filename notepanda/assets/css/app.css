@@ -44,6 +44,14 @@ legend {
   border-bottom: 1px solid #CCC;
 }
 
+[class^="icon-"], [class*=" icon-"] {
+  opacity: 0.7;
+}
+
+[class^="icon-"]:hover, [class*=" icon-"]:hover {
+  opacity: 1.0;
+}
+
 /* NotePanda stuff */
 
 .new_note {
@@ -71,13 +79,21 @@ legend {
 }
 
 .note_input {
-  height: 300px;
+  height: 500px;
 }
 
-.note_buttons {
-  border-top: 1px solid #CCC;
-  margin-top: 15px;
-  padding-top: 15px;
+.item_header h3 {
+  display: inline;
+  margin-top: 5px;
+}
+
+.note_header {
+  border-bottom: 1px solid #CCC;
+  margin-bottom: 20px;
+}
+
+.note_header .note_icons {
+  display: inline;
   -moz-opacity: 0.00;
   opacity: 0.00;
   -ms-filter:"progid:DXImageTransform.Microsoft.Alpha"(Opacity=0);
@@ -92,11 +108,11 @@ legend {
   -o-transition-duration: 0.5s;
   -o-transition-delay: 0.25s;
   transition-property: opacity;
-  transition-duration: 0.5s;
   transition-delay: 0.25s;
+  transition-duration: 0.5s;
 }
 
-.well:hover .note_buttons {
+.well:hover .note_icons {
   -moz-opacity: 1;
   opacity: 1;
   -ms-filter:"progid:DXImageTransform.Microsoft.Alpha"(Opacity=100);

@@ -35,7 +35,16 @@
   </div>
 
   <div class="span12">
-    <h3 class="category_title">{{model.name}}</h3>
+    <div class="item_header category_header">
+      <h3>{{model.name}}</h3>
+      {{#if parents.length}}
+      <div class="note_icons pull-right">
+        <a href="#!/notes/{{model.id}}/edit"><i class="icon-pencil" title="Edit Category"></i></a>
+        <a href="#!/new_note/{{model.id}}"><i class="icon-plus-sign" title="Add Child"></i></a>
+        <a href="#!/" class="delete"><i class="icon-trash" title="Delete Category"></i></a>
+      </div>
+      {{/if}}
+    </div>
   </div>
 
   <div class="span3 well new_note">
@@ -47,12 +56,6 @@
     <h4>{{this.attributes.name}}</h4>
   </div>
   {{/each}}
-  <div class="span12">
-    {{#if parents.length}}
-      <a href="#!/notes/{{model.id}}/edit" class="btn">Edit Category</a>
-      <a href="#!/" class="btn btn-danger delete">Delete Category</a>
-    {{/if}}
-  </div>
 </script>
 
 <script id="note" type="text/x-handlebars-template">
@@ -73,19 +76,18 @@
 
   <div class="span12">
     <div class="well">
-      <legend>{{model.name}}</legend>
-      {{{model.content}}}
-      <div class="note_buttons">
-        <a href="#!/notes/{{model.id}}/edit" class="btn">Edit Note</a>
-        <a href="#!/new_note/{{model.id}}" class="btn btn-primary">Add Child</a>
-        <a href="#!/" class="btn btn-danger delete">Delete Note</a>
+      <div class="item_header note_header">
+        <h3>{{model.name}}</h3>
+        <div class="note_icons pull-right">
+          <a href="#!/notes/{{model.id}}/edit"><i class="icon-pencil" title="Edit Note"></i></a>
+          <a href="#!/new_note/{{model.id}}"><i class="icon-plus-sign" title="Add Child"></i></a>
+          <a href="#!/" class="delete"><i class="icon-trash" title="Delete Note"></i></a>
+        </div>
       </div>
+      {{{model.content}}}
     </div>
   </div>
   {{#if children.length}}
-    <div class="span12">
-      <h3>Children</h3>
-    </div>
     {{#each children}}
     <div class="span3 well {{this.attributes.type}}" data-href="#!/notes/{{this.attributes.id}}">
       <h4>{{this.attributes.name}}</h4>

@@ -56,6 +56,7 @@ $(document).ready(function(){
           model: panda.notes.get(nid)
         });
         $('.content').html(view.render().el);
+        view.attachToolTip();
     },
 
     new_note: function(pid) {
