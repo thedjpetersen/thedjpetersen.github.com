@@ -47,13 +47,17 @@
     </div>
   </div>
 
-  <div class="span3 well new_note">
-    <h4>New note</h4>
-    <p>Click here to add a new note or category.</p>
+  <div class="span3">
+    <div class="well new_note">
+      <h4>New note</h4>
+      <p>Click here to add a new note or category.</p>
+    </div>
   </div>
   {{#each children}}
-  <div class="span3 well {{this.attributes.type}}" data-href="#!/notes/{{this.attributes.id}}">
-    <h4>{{this.attributes.name}}</h4>
+  <div class="span3">
+    <div class="well {{this.attributes.type}}" data-href="#!/notes/{{this.attributes.id}}">
+      <h4>{{this.attributes.name}}</h4>
+    </div>
   </div>
   {{/each}}
 </script>
