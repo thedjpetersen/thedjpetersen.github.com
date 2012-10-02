@@ -61,10 +61,6 @@
   width: 400px;
 }
 
-.blogdate {
-  float: left
-}
-
 .blogdate,.blogtitle{
   display: inline-block;
 }
