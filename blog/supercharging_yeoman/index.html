@@ -1,0 +1,234 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>David Petersen - Supercharging Yeoman</title>
+    <link rel="stylesheet" type="text/css" href="/assets/stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="/assets/stylesheets/prettify.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="/assets/stylesheets/sunburst.css" media="screen">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href="http://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet" type="text/css">
+    
+    <meta name="generator" content="nanoc 3.2.2">
+  </head>
+  <body>
+    <div id="main">
+      
+        <h1>Supercharging Yeoman</h1>
+
+      
+      <p>I recently have become interested in the new project spear headed by
+Paul Irish and Addy Osmani called <a href="http://yeoman.io">Yeoman</a>. Essentially a static website
+generator it has a large amount of neat built in tools such as <a href="http://gruntjs.com/">Grunt</a> and <a href="https://github.com/twitter/bower">Bower</a>. For my own neads it
+was missing two things, layout/partial support and a easy way to include
+a directory of scripts in your markup.</p>
+
+<h2>Layout Support</h2>
+
+<p>I enjoy writing HTML just as much as the next cat, but if I have the
+opportunity to use a preprocessor such as <a href="http://haml.info/">Haml</a> or <a href="http://jade-lang.com/">Jade</a> I will take that opportunity. This
+will usually result in less typing, cleaner syntax and easier debugging.
+My biggest suprise when I first saw Yeoman was that there templating was
+built in out of the box. The intention may have been for yeoman only to
+be for single page applications, but it makes it much more difficult if
+you are trying to develop a webpage that is more then a few pages. After
+copying and pasting header and footer syntax a few times you are done.</p>
+
+<p>For myself I prefer jade and thankfully I found a <a href="https://github.com/phated/grunt-jade">grunt plugin</a> to compile
+jade templates and output html. I ended up forking the plugin <a href="https://github.com/thedjpetersen/grunt-jade/pull/1/files">to
+add</a> the ability to compile '.handlebars.jade' files to '.handlebars'
+files. You need to configure your grunt file as follows(feel free to
+look at <a href>mine</a> for
+reference):</p>
+
+<ul>
+<li>Load Jade Task -
+Add the following line inside of your module.exports function</li>
+</ul>
+
+
+<pre class="prettyprint lang-js">
+grunt.loadNpmTasks('grunt-jade');
+</pre>
+
+
+<ul>
+<li>Setup Jade Compilation - define your jade task like as follows, it is
+imporant to keep the client and pretty options the same as below:</li>
+</ul>
+
+
+<pre class="prettyprint lang-js">
+// compile .jade files using jade
+jade: {
+  html: {
+    src: ['app/jade/*.jade', 'app/jade/**/*.jade',
+    'app/jade/!_*.jade', 'app/jade/**/!_*.jade'],
+    dest: 'app/',
+    options: {
+      client: false,
+      basePath: 'app/jade',
+      pretty: true
+    }
+  }
+}
+</pre>
+
+
+<ul>
+<li>Add Jade watcher - add a watch task to recompile jade</li>
+</ul>
+
+
+<pre class="prettyprint lang-js">
+jade: {
+  files: [
+    'app/jade/*.jade',
+    'app/jade/**/*.jade'
+  ],
+  tasks: 'jade'
+}
+</pre>
+
+
+<p>Once you have this set up you can write layouts and partials to reduce
+the amount of boilerplate you have to write.</p>
+
+<h2>Link to directory of scripts</h2>
+
+<p>The second thing I wanted from yeoman was the ability to specify a
+directory and have my templates magically populated with script tags to
+the files in that directory. Something similar to the behavior in the
+rails pipeline but as a template tag. One of the nice parts of Jade is
+that you can write functions in the global scope and then reference them
+in your jade templates. I ended up writing this small helper function to
+populate my templates with all the files in a directory. It uses the <a href="https://github.com/substack/node-findit">findit</a> module to walk
+the directories:</p>
+
+<pre class="prettyprint lang-js">
+var findit = require('findit')
+
+var template = function(name) {
+    return '<script type='\"text/javascript\"' src="%5C%22/scripts'" name></script>\n';
+};
+
+module.exports = function(targetDir) {
+    targetDir = targetDir.indexOf('/') === 0 ? targetDir : '/' +
+targetDir;
+
+    global.js_dir = function(scriptsDir) {
+
+        scriptsDir = scriptsDir.indexOf('/') === 0 ? scriptsDir : '/' +
+scriptsDir;
+        var output = '';
+        var baseDir = __dirname + targetDir;
+        var files = findit.sync(baseDir + scriptsDir);
+
+        for(var i=0; i<files i var file="files[i];" filepath="file.replace(baseDir," if> 1 &amp;&amp; filePath[0].length &gt; 1) {
+                output = output + template(filePath[0]);
+            }
+        }
+
+        return output;
+    };
+};
+</files></pre>
+
+
+<p>Then to reference it in your template you do the following:</p>
+
+<pre class="prettyprint lang-js">
+!= js_dir('models')
+!= js_dir('views')
+</pre>
+
+
+<h2>Proxy setup</h2>
+
+<p>This is just a bonus. Recently there was a pull request was closed that
+added proxy support to Yeoman. This is useful if you are building a
+frontend application to consume an API from a different domain then
+which you are developing. I used the <a href="https://github.com/mikeal/request">request</a> library to relay
+the requests. Here is how I set up my proxy:</p>
+
+<pre class="prettyprint lang-js">
+// Far above
+var request = require('request');
+
+proxies: {
+  '^/api/(.+)': function (req, res, next, match) {
+    req.url = 'http://localhost:5000/' + match[1];
+    request(req, function(error, response, body) {
+      res.writeHead(response.statusCode, response.headers);
+      res.write(body);
+      res.end();
+    });
+  }
+}
+</pre>
+
+
+
+
+<script>
+  window.onload = function() {
+    prettyPrint();
+  };
+</script>
+
+
+      
+        <div class="bloginfo">
+  <span class="infolabel">Updated on:</span>
+  <span class="infocontent">November 18, 2012</span>
+</div>
+<div class="bloginfo">
+  <span class="infolabel">Tags:</span>
+  <span class="infocontent">hobby</span>
+</div>
+
+      
+    </div>
+    <div id="sidebar">
+      <h2 id="logo">
+        <a href="/">
+          <img src="/assets/images/logo.png">
+        </a>
+      </h2>
+      <ul>
+        <li><h3>&Agrave; la carte</h3></li>
+        <li id="blog"><a href="/blog/">Blog</a></li>
+        <li id="about"><a href="/about/">About</a></li>
+        <li id="projects"><a href="/projects/">Projects</a></li>
+        <li id="playground"><a href="/playground/">Playground</a></li>
+        <li id="presentations"><a href="/presentations/">Presentations</a></li>
+        <li id="contact"><a href="/contact/">Contact</a></li>
+      </ul>
+      <div id="social">
+        <a href="http://www.github.com/thedjpetersen">
+          <img src="/assets/images/github.png"></img>
+        </a>
+        <a href="http://www.twitter.com/thedjpetersen">
+          <img src="/assets/images/twitter.png"></img>
+        </a>
+      </div>
+
+      <div id="edge"></div>
+    </div>
+  <script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-26290380-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+  </script>
+  <script type="text/javascript" src="/assets/javascripts/prettify.js"></script>
+  
+  </body>
+</html>
