@@ -17,10 +17,10 @@
         <h1>Supercharging Yeoman</h1>
 
       
-      <p>I recently have become interested in the new project spear headed by
+      <p>I recently have become interested in the new project spearheaded by
 Paul Irish and Addy Osmani called <a href="http://yeoman.io">Yeoman</a>. Essentially a static website
-generator it has a large amount of neat built in tools such as <a href="http://gruntjs.com/">Grunt</a> and <a href="https://github.com/twitter/bower">Bower</a>. For my own neads it
-was missing two things, layout/partial support and a easy way to include
+generator, it has a large amount of neat built in tools such as <a href="http://gruntjs.com/">Grunt</a> and <a href="https://github.com/twitter/bower">Bower</a>. For my own needs it
+was missing two things: layout/partial support and a easy way to include
 a directory of scripts in your markup.</p>
 
 <h2>Layout Support</h2>
@@ -28,13 +28,8 @@ a directory of scripts in your markup.</p>
 <p>I enjoy writing HTML just as much as the next cat, but if I have the
 opportunity to use a preprocessor such as <a href="http://haml.info/">Haml</a> or <a href="http://jade-lang.com/">Jade</a> I will take that opportunity. This
 will usually result in less typing, cleaner syntax and easier debugging.
-My biggest suprise when I first saw Yeoman was that there templating was
-built in out of the box. The intention may have been for yeoman only to
-be for single page applications, but it makes it much more difficult if
-you are trying to develop a webpage that is more then a few pages. After
-copying and pasting header and footer syntax a few times you are done.</p>
-
-<p>For myself I prefer jade and thankfully I found a <a href="https://github.com/phated/grunt-jade">grunt plugin</a> to compile
+My biggest suprise when I first saw Yeoman was that there was no templating
+built in out of the box. For myself I prefer jade, and thankfully I found a <a href="https://github.com/phated/grunt-jade">grunt plugin</a> to compile
 jade templates and output html. I ended up forking the plugin <a href="https://github.com/thedjpetersen/grunt-jade/pull/1/files">to
 add</a> the ability to compile '.handlebars.jade' files to '.handlebars'
 files. You need to configure your grunt file as follows(feel free to
@@ -53,7 +48,7 @@ grunt.loadNpmTasks('grunt-jade');
 
 
 <ul>
-<li>Setup Jade Compilation - define your jade task like as follows, it is
+<li>Setup Jade Compilation - define your jade task like below, it is
 imporant to keep the client and pretty options the same as below:</li>
 </ul>
 
@@ -100,7 +95,7 @@ the amount of boilerplate you have to write.</p>
 directory and have my templates magically populated with script tags to
 the files in that directory. Something similar to the behavior in the
 rails pipeline but as a template tag. One of the nice parts of Jade is
-that you can write functions in the global scope and then reference them
+the ability to write functions in the global scope and then reference them
 in your jade templates. I ended up writing this small helper function to
 populate my templates with all the files in a directory. It uses the <a href="https://github.com/substack/node-findit">findit</a> module to walk
 the directories:</p>
@@ -147,7 +142,7 @@ scriptsDir;
 
 <p>This is just a bonus. Recently there was a pull request was closed that
 added proxy support to Yeoman. This is useful if you are building a
-frontend application to consume an API from a different domain then
+frontend application to consume an API from a different domain from
 which you are developing. I used the <a href="https://github.com/mikeal/request">request</a> library to relay
 the requests. Here is how I set up my proxy:</p>
 
@@ -180,7 +175,7 @@ proxies: {
       
         <div class="bloginfo">
   <span class="infolabel">Updated on:</span>
-  <span class="infocontent">November 18, 2012</span>
+  <span class="infocontent">November 19, 2012</span>
 </div>
 <div class="bloginfo">
   <span class="infolabel">Tags:</span>
