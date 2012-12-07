@@ -87,3 +87,16 @@
   font-family: 'Open Sans', Helvetica, Arial, sans-serif;
 }
 
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen 
+and (min-width : 320px) 
+and (max-width : 480px) {
+  /* Styles */
+  #main .section:nth-child(2) {
+    display: none;
+  }
+
+  .blogdate {
+    display: none;
+  }
+}
