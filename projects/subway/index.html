@@ -1,81 +1,49 @@
-<!DOCTYPE HTML>
-<html lang="en">
+<!DOCTYPE html>
+<html>
   <head>
     <meta charset="utf-8">
-    <title>David Petersen - Subway</title>
-    <link rel="stylesheet" type="text/css" href="/assets/stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="/assets/stylesheets/prettify.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="/assets/stylesheets/sunburst.css" media="screen">
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-    <link href="http://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet" type="text/css">
-    
-    <meta name="generator" content="nanoc 3.2.2">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>David Petersen
+    </title>
+    <meta name="description" content="Website of David Petersen">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/styles/style.css">
+    <style>
+      p img {
+        max-width: 100%
+      }
+    </style>
   </head>
   <body>
     <div class="container">
-      <div class="sidebar_container">
-        <div id="sidebar">
-          <h2 id="logo">
-            <a href="/">
-              <img src="/assets/images/logo.png" alt="David Petersen" title="Yep thats me">
-            </a>
-          </h2>
-          <ul>
-            <li><h3>&Agrave; la carte</h3></li>
-            <li id="blog"><a href="/blog/">Blog</a></li>
-            <li id="about"><a href="/about/">About</a></li>
-            <li id="projects"><a href="/projects/">Projects</a></li>
-            <li id="playground"><a href="/playground/">Playground</a></li>
-            <li id="contact"><a href="/contact/">Contact</a></li>
-          </ul>
-          <div id="social">
-            <a href="http://www.github.com/thedjpetersen">
-              <img src="/assets/images/github.png" alt="github" title="My coding work"></img>
-            </a>
-            <a href="http://www.twitter.com/thedjpetersen">
-              <img src="/assets/images/twitter.png" alt="twitter" title="My tweets"></img>
-            </a>
+      <div class="row">
+        <div class="col-md-2 sidebar">
+          <div class="affix"><a href="/">
+              <svg height="100" width="100">
+                <clippath id="boundCircle">
+                  <circle cx="50" cy="50" r="40"></circle>
+                </clippath>
+              </svg></a>
+            <h4><a href="/">David Petersen</a></h4>
+            <ul>
+              <li><a href="/about/">About</a></li>
+              <li><a href="/thoughts/">Thoughts</a></li>
+              <li><a href="/projects/">Projects</a></li>
+              <li><a href="/contact/">Contact</a></li>
+            </ul>
           </div>
+        </div>
+        <div class="col-md-10 main"><h4 id="subway">Subway</h4>
+<p>Subway is an web based IRC client. The goal of this project is to create a client that makes IRC more accessible for beginners. More info can be found on the <a href="https://github.com/thedjpetersen/subway">github page</a>.</p>
+<h5 id="-chat-"><strong>Chat</strong></h5>
+<p><img src="/images/subway_chat.png" alt="Subway Chat" title="Subway Chat"></p>
+<h5 id="-plugins-"><strong>Plugins</strong></h5>
+<p><img src="/images/subway_plugins.png" alt="Subway Plugins" title="Subway Plugins"></p>
 
-          <div id="edge"></div>
         </div>
       </div>
-      <div id="main">
-        
-          <h2>Subway</h2>
-
-
-  <br/>
-  URL: <span><a href="https://github.com/thedjpetersen/subway">https://github.com/thedjpetersen/subway</a></span>
-
-
-
-  <p>Subway is a web-based IRC client with a multi-user backend and a JavaScript-heavy UI. Frontend/backend communication is done with websockets (or best available fallback where not available). The backend supports connection persistence and optional logging when the browser disconnects.</p>
-  <br/>
-
-
-<img class="framed_pic" src="/assets/images/subway-thumb.png" />
-
-        
-        
-
-        
-      </div>
     </div>
-  <script type="text/javascript">
-
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-26290380-1']);
-    _gaq.push(['_trackPageview']);
-
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-
-  </script>
-  <script type="text/javascript" src="/assets/javascripts/prettify.js"></script>
-  
+    <script src="/scripts/delaunay.js"></script>
+    <script src="/scripts/main.js"></script>
   </body>
 </html>

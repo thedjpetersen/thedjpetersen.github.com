@@ -1,77 +1,40 @@
-<!DOCTYPE HTML>
-<html lang="en">
+<!DOCTYPE html>
+<html>
   <head>
     <meta charset="utf-8">
-    <title>David Petersen - Projects</title>
-    <link rel="stylesheet" type="text/css" href="/assets/stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="/assets/stylesheets/prettify.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="/assets/stylesheets/sunburst.css" media="screen">
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-    <link href="http://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet" type="text/css">
-    
-    <meta name="generator" content="nanoc 3.2.2">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>David Petersen
+    </title>
+    <meta name="description" content="Website of David Petersen">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="/styles/project.css">
   </head>
   <body>
     <div class="container">
-      <div class="sidebar_container">
-        <div id="sidebar">
-          <h2 id="logo">
-            <a href="/">
-              <img src="/assets/images/logo.png" alt="David Petersen" title="Yep thats me">
-            </a>
-          </h2>
-          <ul>
-            <li><h3>&Agrave; la carte</h3></li>
-            <li id="blog"><a href="/blog/">Blog</a></li>
-            <li id="about"><a href="/about/">About</a></li>
-            <li id="projects"><a href="/projects/">Projects</a></li>
-            <li id="playground"><a href="/playground/">Playground</a></li>
-            <li id="contact"><a href="/contact/">Contact</a></li>
-          </ul>
-          <div id="social">
-            <a href="http://www.github.com/thedjpetersen">
-              <img src="/assets/images/github.png" alt="github" title="My coding work"></img>
-            </a>
-            <a href="http://www.twitter.com/thedjpetersen">
-              <img src="/assets/images/twitter.png" alt="twitter" title="My tweets"></img>
-            </a>
+      <div class="row">
+        <div class="col-md-2 sidebar">
+          <div class="affix"><a href="/">
+              <svg height="100" width="100">
+                <clippath id="boundCircle">
+                  <circle cx="50" cy="50" r="40"></circle>
+                </clippath>
+              </svg></a>
+            <h4><a href="/">David Petersen</a></h4>
+            <ul>
+              <li><a href="/about/">About</a></li>
+              <li><a href="/thoughts/">Thoughts</a></li>
+              <li><a href="/projects/">Projects</a></li>
+              <li><a href="/contact/">Contact</a></li>
+            </ul>
           </div>
-
-          <div id="edge"></div>
+        </div>
+        <div class="col-md-10 main"><h3 id="projects">Projects</h3>
+<a href="/projects/subway" class="project"><strong>Subway</strong><img src="/images/subway_thumb.png" alt="Subway"></a>
         </div>
       </div>
-      <div id="main">
-        
-        
-    <div style="height:250px">
-    <h3><a href="/projects/subway/">Subway</a></h3>
-    <div>
-      <img class="framed_pic" src="/assets/images/subway-thumb.png">
-</div>
-    <div style="margin-top:10px;">
-      
-        URL: <span><a href="https://github.com/thedjpetersen/subway">https://github.com/thedjpetersen/subway</a></span>
-      
-      <p>Persistant online IRC client.</p>
     </div>
-  </div>
-        
-      </div>
-    </div>
-  <script type="text/javascript">
-
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-26290380-1']);
-    _gaq.push(['_trackPageview']);
-
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-
-  </script>
-  <script type="text/javascript" src="/assets/javascripts/prettify.js"></script>
-  
+    <script src="/scripts/delaunay.js"></script>
+    <script src="/scripts/main.js"></script>
   </body>
 </html>

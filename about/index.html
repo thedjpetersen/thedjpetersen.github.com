@@ -1,86 +1,56 @@
-<!DOCTYPE HTML>
-<html lang="en">
+<!DOCTYPE html>
+<html>
   <head>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>David Petersen - About</title>
-    <link rel="stylesheet" type="text/css" href="/assets/stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="/assets/stylesheets/prettify.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="/assets/stylesheets/sunburst.css" media="screen">
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-    <link href="http://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet" type="text/css">
-    
-    <meta name="generator" content="nanoc 3.2.2">
+    <meta name="description" content="Website of David Petersen">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/styles/style.css">
+    <style>
+      .side_bio {
+        margin-top: 16px;
+      }
+    </style>
   </head>
   <body>
     <div class="container">
-      <div class="sidebar_container">
-        <div id="sidebar">
-          <h2 id="logo">
-            <a href="/">
-              <img src="/assets/images/logo.png" alt="David Petersen" title="Yep thats me">
-            </a>
-          </h2>
-          <ul>
-            <li><h3>&Agrave; la carte</h3></li>
-            <li id="blog"><a href="/blog/">Blog</a></li>
-            <li id="about"><a href="/about/">About</a></li>
-            <li id="projects"><a href="/projects/">Projects</a></li>
-            <li id="playground"><a href="/playground/">Playground</a></li>
-            <li id="contact"><a href="/contact/">Contact</a></li>
-          </ul>
-          <div id="social">
-            <a href="http://www.github.com/thedjpetersen">
-              <img src="/assets/images/github.png" alt="github" title="My coding work"></img>
-            </a>
-            <a href="http://www.twitter.com/thedjpetersen">
-              <img src="/assets/images/twitter.png" alt="twitter" title="My tweets"></img>
-            </a>
+      <div class="row">
+        <div class="col-md-2 sidebar">
+          <div class="affix"><a href="/">
+              <svg height="100" width="100">
+                <clippath id="boundCircle">
+                  <circle cx="50" cy="50" r="40"></circle>
+                </clippath>
+              </svg></a>
+            <h4><a href="/">David Petersen</a></h4>
+            <ul>
+              <li><a href="/about/">About</a></li>
+              <li><a href="/thoughts/">Thoughts</a></li>
+              <li><a href="/projects/">Projects</a></li>
+              <li><a href="/contact/">Contact</a></li>
+            </ul>
           </div>
+        </div>
+        <div class="col-md-10 main"><img src="/images/me.jpg" class="full_width">
+          <div class="row">
+            <div class="col-md-10">
+              <h3>About Me</h3><p>My name is David Petersen. I was born in Israel, spent my younger years in Lincoln, Nebraska, and finally landed in Corvallis, Oregon. Currently I am living in Seattle, Washington. I believe I have been heavily influenced by the physical environment around me, particularly during my formative years in Oregon. Growing up in Nebraska I was accustomed to harsh seasons and uniform landscapes. After moving to Oregon I began to discover mountains, rivers, beaches and forests. I believe my creative goal is to strive to match the perfection I see in nature.</p>
+<p>Web development provides a creative outlet for me. There is something very powerful about having an idea and a few minutes later being able to start to see it come to fruition. My passion is to create websites that are wholly beautiful, both on the inside and out.</p>
+<p>Outside of work I enjoy playing soccer, cooking, and riding my bicycle. This website will serve as my portfolio and an outlet for my thoughts.</p>
 
-          <div id="edge"></div>
+            </div>
+            <div class="col-md-2 side_bio">
+              <h5><strong>City</strong></h5><span>Seattle, Washington</span>
+              <h5><strong>Employer</strong></h5><span>Amazon</span>
+              <h5><strong>Toolbox</strong></h5><span>Javascript, HTML, CSS</span>
+              <h5><strong>Mood</strong></h5><span>Optimistic</span>
+            </div>
+          </div>
         </div>
       </div>
-      <div id="main">
-        
-        <h1>Eat.Sleep.Develop</h1>
-
-<p>My name is David Petersen. I live in rainy Seattle Wasington. 
-I enjoy soccer, traveling, and cooking.</p>
-
-<p>I love traveling, learning, and creating. I was fortunate enough 
-to be able to spend a year in France traveling and working. Adjusting 
-to a new culture was a wonderful experience for me. I fell in love with 
-the food, <i>l'art de vivre</i>, and was fortunate to bring back a 
-girlfriend(now my wife) as well.</p>
-
-<p>I have found that web is a means of creative outlet for me. 
-I started learning HTML and CSS several years ago and have developed a love of trying different 
-web frameworks. I am always on the search for find the means of turning ideas quickly 
-into reality. This is what I have found myself to being truely passionate about, 
-being able to find a problem with the world and try to address it using technology. I don't 
-feel tightly bound to one programming language or another, I want to program in the most 
-terse and simple way as possible.</p>
-
-<p>This website will serve as a outlet for my portfolio and my thoughts on programming.</p>
-
-<img class="framed_pic" src="/assets/images/me.jpg">
-        
-      </div>
     </div>
-  <script type="text/javascript">
-
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-26290380-1']);
-    _gaq.push(['_trackPageview']);
-
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-
-  </script>
-  <script type="text/javascript" src="/assets/javascripts/prettify.js"></script>
-  
+    <script src="/scripts/delaunay.js"></script>
+    <script src="/scripts/main.js"></script>
   </body>
 </html>
